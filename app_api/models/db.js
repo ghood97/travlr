@@ -45,6 +45,6 @@ process.on('SIGTERM', () => {
   });                                                       
 });
 
-connect();
+// connect();
 
 require("./travlr")
