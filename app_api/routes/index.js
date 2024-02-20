@@ -2,8 +2,15 @@ var express = require('express');
 const router = express.Router();
 const tripsController = require('../controllers/trips');
 
-/* GET home page. */
-router.get('/trips', tripsController.tripList);
-router.get('/trips/:tripCode', tripsController.tripsFindByCode);
+router
+    .route('/trips')
+    .get(tripsController.tripList)
+    .post(tripsController.tripsAddTrip);
+
+router
+    .route('/trips/:tripCode')
+    .get('/trips/:tripCode', tripsController.tripsFindByCode)
+    .put('/trips/:tripCode', tripsController.tripsUpdateTrip);
+
 
 module.exports = router;
