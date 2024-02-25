@@ -11,6 +11,8 @@ import { TripDataService } from '../services/trip-data.service';
 })
 export class EditTripComponent implements OnInit {
 
+  private editForm;
+  private submitted;
   constructor(private router: Router, private formBuilder: FormBuilder, private tripService: TripDataService) { }
 
   ngOnInit() {
